@@ -28,5 +28,10 @@
 .clothesList li:hover{
     color:antiquewhite;
     cursor:pointer;
-    transform:scale(0.9)
+    transform:scale(0.9);
+}
+@media(max-width:768px){
+    .ClothHeader{
+        display:none;
+    }
 }

@@ -70,7 +70,58 @@
  font-size: 25px;
  transition:transform ease 0.3s;
 }
+.dropdownIcon{
+  display:none;
+}
 .liLinks li:hover{
  transform:translateY(-5px);
  color:white;
+}
+@media(max-width:768px){
+  .header{
+    height:70px;
+  }
+  .leftSide{
+    margin-right:0.4%;
+
+  }
+  .leftSide img{
+    margin-right:4px;
+  }
+  .leftSide h2{
+    font-size: 20px;
+  }
+  .searchBar{
+    left:5%;
+    top:5%;
+  }
+  .searchBar input{
+    display:none;
+
+  }
+  
+  .rightSide{
+    left:6%;
+  }
+  .liLinks li{
+    font-size:20px;
+    margin-right: 2px;
+    margin-left: 3px;
+  }
+  .dropdownIcon{
+    display:inline-block;
+  }
+  .searchBar .searchIcon{
+    display:inline-block;
+    top: 60%;
+    color: #000000;
+    transition:transform ease 0.3s;
+  }
+  .searchBar .searchIcon:hover{
+    transform:translateY(-5px);
+    color:white;
+    cursor:pointer;
+  }
+
+  
 }
