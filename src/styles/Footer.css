@@ -1,0 +1,45 @@
+@import url('https://fonts.googleapis.com/css2?family=Lora&display=swap');
+.footer{
+  background-color: #F453AD;
+  height: 100px;
+  display: flex;
+  flex-direction: row;
+  margin-top:30%;
+}
+.leftSideFooter{
+    position:relative;
+    top:5%;
+}
+.leftSideFooter p{
+    font-weight:600;
+    font-size:20px;
+    color: #7f160c;
+}
+.socialLinks a{
+    font-size: 20px;
+    margin-right:3px;
+    margin-left:4px;
+    color:#7f160c;
+    transition:transform 0.3s ease;
+}
+.socialLinks a:hover{
+    transform:scale(1.5);
+    color:white;
+}
+.middleAreaFooter{
+    position:relative;
+    top:5%;
+    left:20%;
+}
+.middleAreaFooter ul{
+    list-style: none;
+
+}
+.middleAreaFooter li{
+
+}
+.rightSideFooter{
+    position:relative;
+    top:5%;
+    left:35%;
+}
