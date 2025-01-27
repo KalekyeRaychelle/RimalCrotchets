@@ -1,0 +1,76 @@
+@import url('https://fonts.googleapis.com/css2?family=Lora:wght@500&display=swap');
+* {
+  font-family: 'Lora', serif;
+}
+.Header {
+  background-color: #F453AD;
+  height: 90px;
+  position: sticky;
+  display: flex;
+  flex-direction: row;
+
+}
+.leftSide {
+  display: flex;
+  margin-right: 1%;
+  
+}
+.leftSide img {
+  margin-right: 15px;
+  transition:transform 0.3s ease;
+}
+.leftSide img:hover{
+    transform:scale(0.8);
+}
+.leftSide h2 {
+  font-weight: bolder;
+  position: relative;
+  top: 30%;
+}
+.searchBar {
+  position: relative;
+  left: 18%;
+  top: 20%;
+  display: flex;
+  align-items: center;
+}
+.searchBar input {
+  padding: 7px 7px 7px 30px; 
+  border-radius: 7px;
+  border: solid 2px teal;
+  transition: transform 0.3s ease;
+  
+}
+.searchBar input:hover {
+  box-shadow: inset #b32209e7 5px;
+  transform: translateY(-5px);
+}
+.searchBar .searchIcon {
+  position: absolute;
+  left: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #888;
+}
+
+.rightSide {
+  position: relative;
+  left: 40%;
+  top: 35%;
+  align-items: center;
+}
+.rightSide ul{
+    display:flex;
+    justify-content: space-around;
+    list-style: none;
+}
+.liLinks li{
+ padding-right: 10px;
+ padding-left: 7px;
+ font-size: 25px;
+ transition:transform ease 0.3s;
+}
+.liLinks li:hover{
+ transform:translateY(-5px);
+ color:white;
+}

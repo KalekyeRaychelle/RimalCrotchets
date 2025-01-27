@@ -1,0 +1,32 @@
+@import url('https://fonts.googleapis.com/css2?family=Lora&display=swap');
+.ClothHeader{
+    height:50px;
+    border-radius:7px;
+    width:40%;
+    background-color: #c30e74;
+    margin:auto;
+    position:absolute;
+    left:30%;
+}
+.clothesList{
+    display:flex;
+    flex-direction: row;
+    list-style: none;
+    align-items:center;
+    position:relative;
+    left:2%;
+    top:-20%;
+}
+.clothesList li{
+    font-size:20px;
+    color:white;
+    padding-left: 7px;
+    padding-right:7px;
+    padding-top:7px;
+    transition:transform 0.3s ease;
+}
+.clothesList li:hover{
+    color:antiquewhite;
+    cursor:pointer;
+    transform:scale(0.9)
+}
