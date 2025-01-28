@@ -71,20 +71,29 @@
 }
 @media(max-width:768px){
     .leftSideFooter p{
-     
         font-size:15px;
+        margin-left:3px;
        
     }
     .socialLinks a{
-        font-size:17px;
+        font-size:15px;
         margin-right:2px;
         margin-left:3px;
        
     }
     .middleAreaFooter{
-        left:3%;
+        left:2%;
+    }
+    .middleAreaFooter li{
+        font-size: 13px;
+        margin-bottom:5px;
     }
     .rightSideFooter{
-        left:1%;
+        left:0.5%;
+    }
+    .rightSideFooter li{
+        font-size: 13px;
+        margin-bottom:5px;
+        text-align: justify;
     }
 }

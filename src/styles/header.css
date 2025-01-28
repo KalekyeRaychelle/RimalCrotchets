@@ -67,7 +67,7 @@
 }
 .liLinks a{
   color:black;
-  transition:transform ease 0.3s,color 0.3s ease;
+  transition:transform 0.3s ease;
   text-decoration: none;
 }
 .liLinks li{
@@ -78,9 +78,13 @@
 .dropdownIcon{
   display:none;
 }
-.liLinks a:hover{
+.liLinks li:hover{
  transform:translateY(-5px);
  color:white;
+}
+.liLinks a:hover{
+  transform:translateY(-5px);
+  color:white;
 }
 @media(max-width:768px){
   .header{
@@ -111,7 +115,7 @@
   .liLinks li{
     font-size:20px;
     margin-right: 2px;
-    margin-left: 3px;
+   
   }
   .dropdownIcon{
     display:inline-block;

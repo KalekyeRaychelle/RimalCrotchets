@@ -115,3 +115,72 @@
     line-height:1.5em;
 
 }
+@media(max-width:768px){
+    .aboutUs{
+        flex-direction: column;
+    }
+    .aboutUs img{
+        width:400px;
+        margin-left: 5%;
+    }
+    .aboutUs p{
+     font-size: small;
+     margin-right: 4%;
+     line-height: 2em;
+    }
+    .aboutUs button{
+        font-size:15px;
+        font-weight: 600;
+    }
+    .aboutUs h2{
+        font-size:19px;
+    }
+    .history{
+      
+        flex-direction: column;
+      
+    }
+    .history img{
+        width:400px;
+        margin-left: 5%;
+    }
+    .history p{
+        font-size: small;
+        line-height: 2em;
+        margin-right: 4%;
+    }
+    .history h2{
+        font-size:19px;
+    }
+    .values{
+        flex-direction: column;
+    }
+    .values img{
+        width:400px;
+        margin-left: 5%;
+    }
+    .values p{
+        font-size: small;
+        line-height: 2em;
+        margin-right: 4%;
+    }
+    .values h2{
+        font-size:19px;
+    }
+    .stories{
+        display:flex;
+        flex-direction: column;
+    }
+    .stories p{
+     
+        margin-right: 3%;
+       
+        line-height:2em;
+        font-size: small;
+
+    }
+    .testimonials h2{
+        font-size:19px;
+    }
+    
+}
