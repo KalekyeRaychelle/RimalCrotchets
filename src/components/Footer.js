@@ -29,8 +29,8 @@ const Footer = () => {
       <div className='rightSideFooter'>
         <ul>
             <li><Link to='/'>Home</Link></li>
-            <li><Link>About Us</Link></li>
-            <li><Link>Contact</Link></li>
+            <li><Link to='/About'>About Us</Link></li>
+            <li><Link to='/Contact'>Contact</Link></li>
         </ul>
       </div>
     </div>
