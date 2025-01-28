@@ -1,6 +1,7 @@
 import React from 'react'
 import { FaFacebookF, FaTwitter, FaInstagram } from 'react-icons/fa';
 import '../styles/Footer.css'
+import { Link } from 'react-router-dom';
 const Footer = () => {
   return (
     <div className='footer'>
@@ -27,9 +28,9 @@ const Footer = () => {
       </div>
       <div className='rightSideFooter'>
         <ul>
-            <li>Home</li>
-            <li>About Us</li>
-            <li>Contact</li>
+            <li><Link to='/'>Home</Link></li>
+            <li><Link>About Us</Link></li>
+            <li><Link>Contact</Link></li>
         </ul>
       </div>
     </div>

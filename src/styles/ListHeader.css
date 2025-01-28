@@ -24,7 +24,7 @@
     border-left: 6px solid transparent; 
     border-right: 6px solid transparent; 
     border-bottom: 6px solid #ccc; 
-    z-index: 999;
+    z-index: 1000;
 }
 
 .dropdownList li {

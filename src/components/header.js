@@ -6,6 +6,7 @@ import { FaSearch } from "react-icons/fa";
 import { FaListUl } from "react-icons/fa";
 import ListHeader from './ListHeader';
 import '../styles/header.css';
+import { Link } from 'react-router-dom';
 
 const Header= () => {
   const [showDropdown, setShowDropdown] = useState(false);
@@ -32,8 +33,8 @@ const Header= () => {
     </div>
     <div className='rightSide'>
       <ul className='liLinks'>
-            <li><FaShoppingBasket /></li>
-            <li><FaSignInAlt /></li>
+            <li><Link><FaShoppingBasket /></Link></li>
+            <li><Link><FaSignInAlt /></Link></li>
             <li onClick={toggleDropdown} className="dropdownIcon">
             <FaListUl /></li>
       </ul>

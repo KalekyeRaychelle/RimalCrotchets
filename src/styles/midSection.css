@@ -1,0 +1,26 @@
+@import url('https://fonts.googleapis.com/css2?family=Lora&display=swap');
+.midSection{
+    margin: 0;
+}
+.midSection img{
+  width:100%;
+  object-fit: cover;
+  height:100vh;
+}
+.midSection button{
+    position:absolute;
+    top:85%;
+    left:10%;
+    padding:15px 20px;
+    color:rgb(102, 146, 147);
+    font-size: 15px;
+    font-weight: 600;
+    border-radius: 7px;
+    border: solid 1px teal;
+    transition:transform 0.3s ease;
+}
+.midSection button:hover{
+    transform:scale(0.9);
+    box-shadow:0 0 7px 5px rgba(36, 109, 109, 0.7);
+    cursor: pointer;
+}

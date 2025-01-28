@@ -4,7 +4,7 @@
   height: 100px;
   display: flex;
   flex-direction: row;
-  margin-top:20%;
+  margin: 0;
 }
 .leftSideFooter{
     position:relative;
@@ -21,10 +21,12 @@
     margin-left:4px;
     color:#7f160c;
     transition:transform 0.3s ease;
+    
 }
 .socialLinks a:hover{
     transform:scale(1.5);
     color:white;
+    cursor: pointer;
 }
 .middleAreaFooter{
     position:relative;
@@ -45,6 +47,7 @@
 .middleAreaFooter li:hover{
     text-decoration: underline;
     color:white;
+    cursor: pointer;
 }
 .rightSideFooter{
     position:relative;
@@ -55,14 +58,16 @@
     list-style: none;
 
 }
-.rightSideFooter li{
+.rightSideFooter a{
     text-align: justify;
     color:#7f160c;
+    text-decoration: none;
     font-weight:500;
 }
-.rightSideFooter li:hover{
+.rightSideFooter a:hover{
     text-decoration: underline;
     color:white;
+    cursor: pointer;
 }
 @media(max-width:768px){
     .leftSideFooter p{

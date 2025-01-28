@@ -64,16 +64,20 @@
     justify-content: space-around;
     list-style: none;
 }
+.liLinks a{
+  color:black;
+  transition:transform ease 0.3s,color 0.3s ease;
+  text-decoration: none;
+}
 .liLinks li{
- padding-right: 10px;
- padding-left: 7px;
- font-size: 25px;
- transition:transform ease 0.3s;
+  padding-right: 10px;
+  padding-left: 7px;
+  font-size: 25px;
 }
 .dropdownIcon{
   display:none;
 }
-.liLinks li:hover{
+.liLinks a:hover{
  transform:translateY(-5px);
  color:white;
 }
