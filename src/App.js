@@ -7,11 +7,15 @@ import { Routes,Route,useLocation} from 'react-router-dom';
 import NoPage from './pages/NoPage';
 import About from './pages/About';
 import Contact from './pages/Contact';
+
+
 function App() {
+
   const location = useLocation();
   return (
     <div className="App">
       <Header/>
+
       <ClothHeader/>
       <Routes location={location} key={location.pathname}>
           <Route path="/" element={<MidSection />} /> 
