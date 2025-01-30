@@ -34,7 +34,7 @@ const Header= () => {
     <div className='rightSide'>
       <ul className='liLinks'>
             <li><Link><FaShoppingBasket /></Link></li>
-            <li><Link><FaSignInAlt /></Link></li>
+            <li><Link to='/SignUp'><FaSignInAlt /></Link></li>
             <li onClick={toggleDropdown} className="dropdownIcon">
             <FaListUl /></li>
       </ul>

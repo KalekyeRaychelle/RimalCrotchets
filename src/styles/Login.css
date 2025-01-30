@@ -1,0 +1,52 @@
+@import url('https://fonts.googleapis.com/css2?family=Lora&display=swap');
+.Login{
+    background-color: rgb(249, 249, 249);
+    padding-top: 5%;
+    padding-bottom: 3%;
+}
+.Login form{  
+    display:flex;
+    width:40%;
+    flex-direction: column;
+    background-color: rgb(237, 225, 210);
+    position:relative;
+    left:30%; 
+    padding:15px 20px 25px 20px;
+    border-radius: 7px;
+
+}
+.Login label{
+    margin: 4px 4px 4px 4px;
+    text-align:justify;
+
+}
+.Login input{
+    margin: 4px 4px 4px 4px;
+    padding: 5px 7px;
+}
+.Login textarea{
+    resize:none;
+    margin: 4px 4px 15px 4px;
+}
+.Login button{
+    padding:5px 7px;
+    width:30%;
+    background-color: transparent;
+    border-radius: 5px;
+    transition:transform 0.3s ease;
+}
+.Login button:hover{
+    transform:scale(0.9);
+    border:2px #515f3a solid;
+    cursor: pointer;
+    background-color: rgba(232, 200, 134, 0.8); 
+
+}
+.Login a{
+    text-decoration: none;
+    color:black;
+}
+.Login a:hover{
+    text-decoration: underline;
+    color:rgb(30, 85, 33);
+}
