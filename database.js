@@ -2,7 +2,8 @@ var mysql=require('mysql2')
 
 var connection=mysql.createConnection({
     host:'localhost',
-    database:'PaulsPizza',
+    database:'RimalsCrotchet',
+    port:4510,
     user:'root',
     password:'Kalekye123_'
 })
