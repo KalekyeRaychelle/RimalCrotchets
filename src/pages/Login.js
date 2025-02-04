@@ -23,7 +23,7 @@ const Login = () => {
       });
       const data= await response.json()
       if(response.ok){
-        navigate("/dashboard");
+        navigate("/Dashboard");
       }else{
         setMessage(data.error || "Something went wrong during login.");
       }

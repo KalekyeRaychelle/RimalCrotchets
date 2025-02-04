@@ -8,8 +8,7 @@ const ClothHeader = () => {
             <li>Accesories</li>
             <li>Pants</li>
             <li>Tops</li>
-            <li>Bags</li>
-            
+            <li>Bags</li>  
         </ul>
     </div>
   )

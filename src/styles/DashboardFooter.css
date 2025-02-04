@@ -1,0 +1,15 @@
+@import url('https://fonts.googleapis.com/css2?family=Lora&display=swap');
+.dashboardFooter{
+    height:5vh;
+    margin-top:20%;
+    border-top: 2px solid rgb(123, 123, 183);
+}
+.dashboardFooter a{
+    padding-left: 10px;
+    text-decoration: none;
+    
+}
+.dashboardFooter a:hover{
+    text-decoration:underline;
+
+}

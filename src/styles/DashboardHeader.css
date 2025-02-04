@@ -1,0 +1,34 @@
+@import url('https://fonts.googleapis.com/css2?family=Lora&display=swap');
+.dashboardHeader{  
+    background-color: rgb(237, 225, 210);
+    display:flex;
+    justify-content: space-around;
+}
+.LeftIcons{
+  margin-top: 2%;
+}
+.LeftIcons a{
+    display: inline-block;
+    color:black;
+    margin-left:7px;
+    text-decoration: none;
+    transition: transform 0.3s ease;
+}
+.LeftIcons a:hover{
+    transform:scale(0.9);
+    color:rgb(123, 123, 183);
+}
+.rightIcon{
+    margin-top: 2%;
+  
+
+}
+.rightIcon a{
+    display: inline-block;
+    font-size: larger;
+    color:rgb(2, 2, 142);
+    transition: transform 0.3s ease;
+}
+.rightIcon a:hover{
+    transform:scale(0.8);
+}

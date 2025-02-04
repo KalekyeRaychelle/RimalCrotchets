@@ -24,25 +24,30 @@ const Signup = () => {
     console.log("Form Data submitted", formData);
 
     try {
-      const response = await fetch("http://localhost:7700/api/auth/signup", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(formData),
-      });
-      const data = await response.json();
+        const response = await fetch("http://localhost:7700/api/auth/signup", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify(formData),
+        });
 
-      if (response.ok) {
-        alert("Sign up was successful! Redirecting to login page.");
-        navigate("/LogIn");
-      } else {
-        setMessage(data.error || "Something went wrong during sign-up.");
-      }
+        const text = await response.text(); 
+        try {
+            const data = JSON.parse(text); 
+            if (response.ok) {
+                alert("Sign up was successful! Redirecting to login page.");
+                navigate("/LogIn");
+            } else {
+                setMessage(data.error || "Something went wrong during sign-up.");
+            }
+        } catch (jsonError) {
+            console.error("JSON Parse Error:", jsonError);
+            setMessage(text || "Invalid server response. Check console for details.");
+        }
     } catch (error) {
-      setMessage("Something went wrong!");
-      console.error("Signup Error:", error);
+        setMessage("Something went wrong!");
+        console.error("Signup Error:", error);
     }
   };
-
   return (
     <div className='Signup'>
       <form onSubmit={handleSubmit}>
@@ -85,7 +90,7 @@ const Signup = () => {
           onChange={handleChange}
           required
         />
-        <label>Password:</label>
+        <label>Password: </label>
         <input
           type='password'
           id='passwd'
@@ -94,7 +99,7 @@ const Signup = () => {
           onChange={handleChange}
           required
         />
-        <label>Confirm Password:</label>
+        <label>Confirm Password: </label>
         <input
           type='password'
           id='conpasswd'

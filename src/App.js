@@ -9,25 +9,31 @@ import About from './pages/About';
 import Contact from './pages/Contact';
 import Signup from './pages/Signup';
 import Login from './pages/Login';
+import Dashboard from './pages/Dashboard';
+import DashboardHeader from './components/DashboardHeader';
+import DashboardFooter from './components/DashboardFooter';
 
 
 function App() {
 
   const location = useLocation();
+  const isDashboard= location.pathname.startsWith('/Dashboard');
+
   return (
     <div className="App">
-      <Header/>
+      {isDashboard ? <DashboardHeader/> :<Header/>}
 
-      <ClothHeader/>
+      {!isDashboard && <ClothHeader/>}
       <Routes location={location} key={location.pathname}>
           <Route path="/" element={<MidSection />} /> 
           <Route path="/About" element={<About/>}/>
           <Route path="/Contact" element={<Contact/>}/>
           <Route path="/SignUp" element={<Signup/>}/>
           <Route path="/LogIn" element={<Login/>}/>
+          <Route path ="/Dashboard" element={<Dashboard/>}/>
           <Route path="*" element={<NoPage />} />
       </Routes>
-      <Footer/>
+      {isDashboard ? <DashboardFooter/>:<Footer/>}
     </div>
   );
 }
