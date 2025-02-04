@@ -5,23 +5,23 @@ const argon2 = require("argon2");
 router.post('/signup',async(req,res)=>{
     const {fname,lname,phoneNo,email,passwd,conpasswd}=req.body;
     if (passwd !== conpasswd) {
-        return res.status(400).send("<p>Passwords do not match</p>");
+        return res.status(400).json({error:"Passwords do not match"});
     }
 
     if (passwd.length < 8) {
-        return res.status(400).send("<p>Password must be at least 8 characters long</p>");
+        return res.status(400).json({error:"Password must be at least 8 characters long"});
     }
 
     if (!/[A-Z]/.test(passwd)) {
-        return res.status(400).send("<p>Password must contain at least one uppercase letter</p>");
+        return res.status(400).json({error:"Password must contain at least one uppercase letter"});
     }
 
     if (!/[0-9]/.test(passwd)) {
-        return res.status(400).send("<p>Password must contain at least one digit</p>");
+        return res.status(400).json({error:"Password must contain at least one digit"});
     }
 
     if (!/[!@#$%^&*]/.test(passwd)) {
-        return res.status(400).send("<p>Password must contain at least one special character</p>");
+        return res.status(400).json({error:"Password must contain at least one special character"});
     }
     try{
         const hashedPasswd= await argon2.hash(passwd)
