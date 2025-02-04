@@ -21,7 +21,7 @@ const Signup = () => {
 
   const handleSubmit = async (e) => { 
     e.preventDefault();
-    console.log("Form Data submitted", formData);
+    console.log("Form Data submitted");
 
     try {
         const response = await fetch("http://localhost:7700/api/auth/signup", {
@@ -109,7 +109,7 @@ const Signup = () => {
           required
         />
         <button type='submit'>Sign Up</button>
-        <p>{message}</p>
+        <p className='errorMess'>{message}</p>
         <Link to='/LogIn'>Have an Account? Login</Link>
       </form>
     </div>

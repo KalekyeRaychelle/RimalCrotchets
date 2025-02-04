@@ -1,0 +1,65 @@
+@import url('https://fonts.googleapis.com/css2?family=Lora&display=swap');
+.CatalogForm{
+    background-color: rgb(249, 249, 249);
+    padding-top: 5%;
+    padding-bottom: 3%;
+}
+.CatalogForm a{
+    font-size:35px;
+    position:relative;
+    right:40%;
+    display:inline-block;
+    transition:transform 0.3s ease;
+}
+.CatalogForm a:hover{
+    transform:scale(0.8);
+}
+.CatalogForm form{  
+    display:flex;
+    width:40%;
+    flex-direction: column;
+    background-color: rgb(237, 225, 210);
+    position:relative;
+    left:30%; 
+    padding:15px 20px 25px 20px;
+    border-radius: 7px;
+
+}
+.categoryForm{
+    margin: 9px 4px 4px 4px;
+}
+.CatalogForm label{
+    margin: 4px 4px 4px 4px;
+    text-align:justify;
+
+}
+.CatalogForm input{
+    margin: 4px 4px 4px 4px;
+    padding: 5px 7px;
+}
+.CatalogForm textarea{
+    resize:none;
+    margin: 4px 4px 15px 4px;
+}
+.CatalogForm button{
+    padding:5px 7px;
+    width:30%;
+    background-color: transparent;
+    border-radius: 5px;
+    transition:transform 0.3s ease;
+}
+.CatalogForm button:hover{
+    transform:scale(0.9);
+    border:2px #515f3a solid;
+    cursor: pointer;
+    background-color: rgba(232, 200, 134, 0.8); 
+
+}
+.CatalogForm a{
+    text-decoration: none;
+    color:black;
+}
+.CatalogForm a:hover{
+    text-decoration: underline;
+    color:rgb(30, 85, 33);
+}
