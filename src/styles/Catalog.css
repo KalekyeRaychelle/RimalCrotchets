@@ -17,8 +17,12 @@
 
 }
 .product-card img{
-    width:300px;
+    width:350px;
     border-radius:10px;
+    transition:transform 0.3s ease;
+}
+.product-card img:hover{
+    transform: scale(0.9);
 }
 .product-card p{
    white-space: normal;
