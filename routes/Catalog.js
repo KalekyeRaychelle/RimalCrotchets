@@ -33,7 +33,7 @@ router.post('/newProduct', upload.single("productImagePath"), (req, res) => {
     });
 });
 router.get("/products",(req,res)=>{
-    var query="SELECT * FROM PRODUCTS";
+    var query="SELECT * FROM products";
     connection.query(query,function(error,results){
         if(error){
             console.error(error);
