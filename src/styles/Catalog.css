@@ -1,5 +1,37 @@
 @import url('https://fonts.googleapis.com/css2?family=Lora&display=swap');
+.CatalogArea {
+ padding-top: 4%;
+}
+.CatalogArea h2{
+    font-size: 35px;
+    color:#F453AD;
+}
+.catalog{
+    display:flex;
+    flex-wrap: wrap;
+    margin-left:2.5%;
+ 
+}
+.product-card{
+    margin: 1% 1% 1% 1%;
 
+}
+.product-card img{
+    width:300px;
+    border-radius:10px;
+}
+.product-card p{
+   white-space: normal;
+}
+.product-card  button{
+    background:transparent;
+    padding:7px 8px;
+    transition:transform 0.3s ease;
+}
+.product-card button:hover{
+    transform:translateY(-5px);
+    border-color: #F453AD;
+}
 .dotArea{
     display:flex;
     gap:10px;

@@ -7,7 +7,7 @@ const Catalog = () => {
 
   useEffect(() => {
 
-    fetch("http://localhost:7700/api/Catalog/product")
+    fetch("http://localhost:7700/api/Catalog/products")
       .then(response => response.json())
       .then(data => {
         if (data.error) {
@@ -38,16 +38,16 @@ const Catalog = () => {
   }
 
   return (
-    <div>
+    <div className='CatalogArea'>
       <h2>Product Catalog</h2>
       <div className="catalog">
         {products.map((product) => (
           <div key={product.productID} className="product-card">
            <img src={`http://localhost:7700${product.productImagePath}`} alt={product.productName} className="product-image" />
 
-            <h3>{product.productName}</h3>
-            <p>Price: ${product.Price}</p>
-            <button>ADD TO Category</button>
+            <p>{product.productName}</p>
+            <p>Price: Ksh.{product.Price}</p>
+            <button>ADD TO CART</button>
           </div>
         ))}
       </div>
