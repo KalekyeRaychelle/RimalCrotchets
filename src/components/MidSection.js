@@ -1,11 +1,16 @@
 import React from 'react'
 import backgrndImg from '../assets/shirtBackground.jpg'
 import '../styles/midSection.css'
+import { useNavigate } from 'react-router-dom'
 const MidSection = () => {
+  const navigate=useNavigate()
+  const handleShopNow=()=>{
+    navigate('/Catalog')
+  }
   return (
     <div className='midSection'>
       <img src={backgrndImg} alt='Home Background'/>
-      <button>SHOP NOW</button>
+      <button onClick={handleShopNow}>SHOP NOW</button>
     </div>
   )
 }

@@ -13,6 +13,7 @@ import Dashboard from './pages/Dashboard';
 import DashboardHeader from './components/DashboardHeader';
 import DashboardFooter from './components/DashboardFooter';
 import CatalogForm from './pages/CatalogForm';
+import Catalog from './pages/Catalog';
 
 function App() {
 
@@ -31,7 +32,8 @@ function App() {
           <Route path="/SignUp" element={<Signup/>}/>
           <Route path="/LogIn" element={<Login/>}/>
           <Route path ="/Dashboard" element={<Dashboard/>}/>
-          <Route path="/newProduct" element={<CatalogForm/>}/>
+          <Route path="/Catalog" element={<Catalog/>}/>
+          <Route path="/Catalog/newProduct" element={<CatalogForm/>}/>
           <Route path="*" element={<NoPage />} />
       </Routes>
       {isDashboard ? <DashboardFooter/>:<Footer/>}
