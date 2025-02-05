@@ -3,7 +3,7 @@
     height:50px;
     border-radius:7px;
     width:40%;
-    background-color: #c30e74;
+    background: linear-gradient(to right, #f8b2ca, #d16999);
     margin:auto;
     position:absolute;
     left:30%;
@@ -26,7 +26,7 @@
     transition:transform 0.3s ease;
 }
 .clothesList li:hover{
-    color:antiquewhite;
+    color:black;
     cursor:pointer;
     transform:scale(0.9);
 }
