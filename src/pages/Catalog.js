@@ -36,7 +36,23 @@ const Catalog = () => {
   if (error) {
     return <div>{error}</div>;
   }
-
+  const addToCart = (productID) => {
+    fetch("http://localhost:7700/api/ShoppingCart", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ productID, email: "user@example.com" }) // Replace with actual user email
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        if (data.success) {
+          setMessage("Item added to cart!");
+          setTimeout(() => setMessage(""), 3000);
+        } else {
+          setMessage("Failed to add item to cart.");
+        }
+      })
+      .catch((error) => console.error("Error:", error));
+  };
   return (
     <div className='CatalogArea'>
       <h2>Product Catalog</h2>
@@ -47,7 +63,7 @@ const Catalog = () => {
 
             <p>{product.productName}</p>
             <p>Price: Ksh.{product.Price}</p>
-            <button>ADD TO CART</button>
+            <button onClick={()=>addToCart(product.productID)}>ADD TO CART</button>
           </div>
         ))}
       </div>
