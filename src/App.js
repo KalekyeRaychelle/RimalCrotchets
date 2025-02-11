@@ -15,6 +15,7 @@ import DashboardFooter from './components/DashboardFooter';
 import CatalogForm from './pages/CatalogForm';
 import Catalog from './pages/Catalog';
 import ShoppingCart from './pages/ShoppingCart'
+import Sweaters from './pages/Sweaters';
 
 function App() {
 
@@ -35,6 +36,7 @@ function App() {
           <Route path ="/Dashboard" element={<Dashboard/>}/>
           <Route path="/Catalog" element={<Catalog/>}/>
           <Route path="/ShoppingCart" element={<ShoppingCart/>}/>
+          <Route path="/Catalog/Sweaters" element={<Sweaters/>}/>
           <Route path="/Catalog/newProduct" element={<CatalogForm/>}/>
           <Route path="*" element={<NoPage />} />
       </Routes>
