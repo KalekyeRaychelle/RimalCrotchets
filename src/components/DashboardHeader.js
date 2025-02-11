@@ -13,7 +13,7 @@ const DashboardHeader = () => {
     <div className='dashboardHeader'>
     <div className='LeftIcons'>
       <Link>Orders</Link>
-      <Link>Shop</Link>
+      <Link to='/Catalog'>Shop</Link>
     </div>
     <div className='midSide'>
       <h2>RIMAL'S CROTCHETS</h2>
