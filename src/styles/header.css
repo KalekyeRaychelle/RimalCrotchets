@@ -58,7 +58,21 @@
   transform: translateY(-50%);
   color: #555;
 }
-
+.cart-toggle-btn{
+  background: transparent;
+  border:none;
+  color:black;
+  transition: all 0.3s ease-in-out;
+  text-decoration: none;
+  font-size: 22px;
+  border-radius: 5px;
+  position:relative;
+  top:-15px;
+}
+.cart-toggle-btn:hover{
+  background-color: rgba(255, 255, 255, 0.2);
+  color: white;
+}
 .rightSide {
   position: relative;
   left: 40%;

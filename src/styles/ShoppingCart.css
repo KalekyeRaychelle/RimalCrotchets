@@ -1,39 +1,90 @@
 @import url('https://fonts.googleapis.com/css2?family=Lora&display=swap');
 
 .shoppingCart {
-   padding-top:5%;
-   padding-bottom:6%;
-    font-family: 'Lora', serif;
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 30%;
+    height: 100vh;
+    background: white;
+    box-shadow: -2px 0 10px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease-in-out;
+    transform: translateX(100%);
+    padding-top:1%;
+    padding-left: 1%;
+    z-index: 1000;
+    overflow-y: auto;
+    behavior: smooth-scrolling;
 }
-.shoppingCart h3{
-    font-size:30px;
-    color:#be2579;
+
+.shoppingCart.open {
+    transform: translateX(0);
 }
-.productCard{
-    border-bottom: #be2579 1px solid;
-    margin-bottom:2%;
-    margin-top: 2%;
+.cart-header{
     display:flex;
-    padding-left:5%;
-    padding-bottom:4%;
 }
-.productCard img{
-    width:150px;
-    border-radius: 7px;
-    margin-right:2%;
-    transition:0.3s transform ease;
+.cart-header h3 {
+    font-size: 25px;
+    color: #be2579;
+    text-align:center;
+    position:relative;
+    left:10%;
+   
 }
-.productCard img:hover{
-    transform:scale(1.1);
-    cursor:pointer;
-}
-.productCard p{
-    margin-top:30px;
-}.quantity-controls {
+.cart-header button{
+    background: transparent;
+    position:relative;
+    left:45%;
+    border: 2px solid #be2579;
+    font-size: 15px;
+    color: #be2579;
+    width: 30px;
+    height: 30px;
+    border-radius: 20%;
     display: flex;
     align-items: center;
-    gap: 8px; 
-    margin-left:20px;
+    justify-content: center;
+    transition: all 0.3s ease-in-out;
+}
+.cart-header button:hover{
+    background: #be2579;
+    color: white;
+    transform: scale(1.1);
+    cursor: pointer;
+    box-shadow: 0px 3px 8px rgba(190, 37, 121, 0.3);
+}
+.productCard {
+    border-bottom: #be2579 1px solid;
+    margin-bottom: 2%;
+    margin-top: 2%;
+    display: flex;
+    padding-left: 2%;
+    padding-bottom: 4%;
+}
+
+.productCard img {
+    width: 100px;
+    border-radius: 7px;
+    margin-right: 2%;
+    margin-top:1%;
+    transition: 0.3s transform ease;
+}
+
+.productCard img:hover {
+    transform: scale(1.1);
+    cursor: pointer;
+}
+
+.productCard p {
+    margin-top: 30px;
+    font-size: 15px;
+}
+
+.quantity-controls {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    margin-left: 20px;
 }
 
 .quantity-controls button {
@@ -41,9 +92,9 @@
     border: 2px solid #be2579;
     font-size: 18px;
     color: #be2579;
-    width: 30px;
-    height: 30px;
-    border-radius: 50%; 
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -53,35 +104,32 @@
 .quantity-controls button:hover {
     background: #be2579;
     color: white;
-    transform: scale(1.1); 
+    transform: scale(1.1);
     cursor: pointer;
-    box-shadow: 0px 3px 8px rgba(190, 37, 121, 0.3); 
+    box-shadow: 0px 3px 8px rgba(190, 37, 121, 0.3);
 }
 
 .quantity-controls span {
-    font-size: 22px;
+    font-size: 20px;
     font-weight: bold;
     min-width: 30px;
     text-align: center;
 }
 
-.quantity-controls span{
- font-size:20px;
-}
-.checkout-button{
-    position:relative;
-    left:30%;
-    font-size:15px;
-    padding:7px 21px;
+.checkout-button {
+    position: relative;
+    font-size: 15px;
+    padding: 7px 21px;
     background: transparent;
-    border:2px solid #F283B6;
+    border: 2px solid #F283B6;
     transition: transform 0.3s ease;
+    margin-bottom: 10%;
 }
 
-.checkout-button:hover{
-    cursor:pointer;
+.checkout-button:hover {
+    cursor: pointer;
     background: #F283B6;
-    color: white; 
+    color: white;
     transform: scale(1.05);
     box-shadow: 0px 4px 10px rgba(242, 131, 182, 0.4);
 }

@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from "react";
-import { FaPlus, FaMinus } from "react-icons/fa";
-import '../styles/ShoppingCart.css'
+import { FaPlus, FaMinus,FaTimes } from "react-icons/fa";
+
+import "../styles/ShoppingCart.css";
+
 function getUserFromToken() {
   const token = localStorage.getItem("token");
   if (!token) {
@@ -18,21 +20,17 @@ function getUserFromToken() {
   }
 }
 
-const ShoppingCart = () => {
-  const calculateTotalPrice=()=>{
-    return cartData.reduce((total, product) => {
-      const quantity = quantities[product.productID] || 1;
-      return total + product.Price * quantity;
-    }, 0);
-  };
+const ShoppingCart = ({ isOpen, closeCart }) => {
   const [cartData, setCartData] = useState([]);
   const [quantities, setQuantities] = useState({});
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
 
   useEffect(() => {
+    if (!isOpen) return; 
+
     const user = getUserFromToken();
-    const userEmail = user?.email || ""; 
+    const userEmail = user?.email || "";
 
     if (!userEmail) {
       setError("You must be logged in to view the cart.");
@@ -41,9 +39,7 @@ const ShoppingCart = () => {
     }
 
     fetch(`http://localhost:7700/api/ShoppingCart/cartProducts?email=${encodeURIComponent(userEmail)}`, {
-      headers: {
-        Authorization: `Bearer ${localStorage.getItem("token")}`,
-      },
+      headers: { Authorization: `Bearer ${localStorage.getItem("token")}` },
     })
       .then((response) => response.json())
       .then((data) => {
@@ -63,7 +59,7 @@ const ShoppingCart = () => {
         setError("Failed to fetch products");
         setLoading(false);
       });
-  }, []);
+  }, [isOpen]);
 
   const updateQuantity = (productID, newQuantity) => {
     if (newQuantity < 1) {
@@ -113,21 +109,23 @@ const ShoppingCart = () => {
   if (error) return <div>{error}</div>;
 
   return (
-    <div className="shoppingCart">
-      <h3>{getUserFromToken()?.fname ? `${getUserFromToken().fname}'s Cart` : "SHOPPING CART"}</h3>
+    <div className={`shoppingCart ${isOpen ? "open" : ""}`}>
+      <div className="cart-header">
+        <h3>{getUserFromToken()?.fname ? `${getUserFromToken().fname}'s Cart` : "SHOPPING CART"}</h3>
+        <button className="close-btn" onClick={closeCart}>
+          <FaTimes />
+        </button>
+      </div>
+
       {cartData.length === 0 ? (
         <div className="empty-cart">
           <p>Your cart is empty</p>
         </div>
       ) : (
-        <div>
+        <div className="cart-content">
           {cartData.map((product) => (
             <div key={product.productID} className="productCard">
-              <img
-                src={`http://localhost:7700${product.productImagePath}`}
-                alt={product.productName}
-                className="product-image"
-              />
+              <img src={`http://localhost:7700${product.productImagePath}`} alt={product.productName} className="product-image" />
               <div>
                 <p>{product.productName}</p>
                 <p>Price: Ksh.{product.Price}</p>
@@ -145,13 +143,13 @@ const ShoppingCart = () => {
           ))}
         </div>
       )}
+
       {cartData.length > 0 && (
-      <div className="cart-footer">
-        <button onClick={handleCheckout} className="checkout-button">
-          Checkout. <span className="total-price">Total: Ksh. {calculateTotalPrice().toFixed(2)}</span>
-        </button>
-     </div>
-  
+        <div className="cart-footer">
+          <button onClick={handleCheckout} className="checkout-button">
+            Checkout. <span className="total-price">Total: Ksh. {cartData.reduce((total, product) => total + product.Price * (quantities[product.productID] || 1), 0).toFixed(2)}</span>
+          </button>
+        </div>
       )}
     </div>
   );
