@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { FaPlus, FaMinus } from "react-icons/fa";
-
+import '../styles/ShoppingCart.css'
 function getUserFromToken() {
   const token = localStorage.getItem("token");
   if (!token) {
@@ -19,6 +19,12 @@ function getUserFromToken() {
 }
 
 const ShoppingCart = () => {
+  const calculateTotalPrice=()=>{
+    return cartData.reduce((total, product) => {
+      const quantity = quantities[product.productID] || 1;
+      return total + product.Price * quantity;
+    }, 0);
+  };
   const [cartData, setCartData] = useState([]);
   const [quantities, setQuantities] = useState({});
   const [loading, setLoading] = useState(true);
@@ -140,9 +146,12 @@ const ShoppingCart = () => {
         </div>
       )}
       {cartData.length > 0 && (
+      <div className="cart-footer">
         <button onClick={handleCheckout} className="checkout-button">
-          Checkout
+          Checkout. <span className="total-price">Total: Ksh. {calculateTotalPrice().toFixed(2)}</span>
         </button>
+     </div>
+  
       )}
     </div>
   );
