@@ -9,7 +9,7 @@ const ClothHeader = () => {
              <li><Link>Accesories</Link></li>
              <li><Link>Pants</Link></li>
              <li><Link>Tops</Link></li>
-             <li><Link>Bags</Link></li> 
+             <li><Link to="/Catalog/Bags">Bags</Link></li> 
         </ul>
     </div>
   )

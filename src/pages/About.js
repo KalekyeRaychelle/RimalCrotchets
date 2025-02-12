@@ -3,7 +3,12 @@ import history from "../assets/history.jpg";
 import aboutUs from "../assets/aboutUs.jpg";
 import missionPic from "../assets/missionPic.webp"
 import '../styles/About.css'
+import {useNavigate} from 'react-router-dom';
 const About = () => {
+    const navigate=useNavigate()
+    const toCatalog=()=>{
+        navigate('/Catalog')
+    }
     return (
         <div className='About'>
             <div className='aboutUs'>
@@ -18,7 +23,7 @@ const About = () => {
                         to freely craft beautiful, manmade pieces that people can cherish and wear with pride.
                         Each item is a testament to our dedication to quality, creativity, and the joy of making
                         something special by hand.</p>
-                    <button>Shop Now</button>
+                    <button onClick={toCatalog}>Shop Now</button>
                 </div>
 
             </div>
