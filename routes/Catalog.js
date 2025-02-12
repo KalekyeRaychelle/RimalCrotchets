@@ -65,4 +65,14 @@ router.get("/Bags",(req,res)=>{
         res.status(201).json({message:"Bag retrieved successfully",products:results})
     })
 })
+router.get("/Tops",(req,res)=>{
+    var query="SELECT * FROM products WHERE Category='Top'";
+    connection.query(query,function(error,results){
+        if(error){
+            console.error(error)
+            return res.status(500).json({error:"Top Retrieval Failure"})
+        }
+        res.status(201).json({message:"Top retrieved successfully",products:results})
+    })
+})
 module.exports = router;
