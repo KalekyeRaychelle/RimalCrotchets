@@ -74,5 +74,29 @@ router.get("/Tops",(req,res)=>{
         }
         res.status(201).json({message:"Top retrieved successfully",products:results})
     })
-})
+});
+router.get("/searchProduct", async (req, res) => {
+    try {
+        const searchQuery = req.query.query;
+        if (!searchQuery) {
+            return res.status(400).json({ error: "Search query is required" });
+        }
+
+        const sql = "SELECT productID, productName, productImagePath FROM products WHERE productName LIKE ?";
+        const values = [`%${searchQuery}%`];
+
+        connection.query(sql, values, (err, results) => {
+            if (err) {
+                console.error("Database query error:", err); 
+                return res.status(500).json({ error: "Database error", details: err.message });
+            }
+            res.json(results);
+        });
+
+    } catch (error) {
+        console.error("Server error:", error);
+        res.status(500).json({ error: "Server error", details: error.message });
+    }
+});
+
 module.exports = router;
