@@ -105,8 +105,9 @@ const ShoppingCart = ({ isOpen, closeCart }) => {
       .catch((error) => console.error("Error:", error));
   };
 
-  if (loading) return <div>Loading...</div>;
-  if (error) return <div>{error}</div>;
+
+
+
 
   return (
     <div className={`shoppingCart ${isOpen ? "open" : ""}`}>
