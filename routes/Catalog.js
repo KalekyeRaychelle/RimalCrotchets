@@ -75,6 +75,16 @@ router.get("/Tops",(req,res)=>{
         res.status(201).json({message:"Top retrieved successfully",products:results})
     })
 });
+router.get("/Pants",(req,res)=>{
+    var query="SELECT * FROM products WHERE Category='Pants'";
+    connection.query(query,function(error,results){
+        if(error){
+            console.error(error)
+            return res.status(500).json({error:"Pants Retrieval Failure"})
+        }
+        res.status(201).json({message:"Pants retrieved successfully",products:results})
+    })
+});
 router.get("/searchProduct", async (req, res) => {
     try {
         const searchQuery = req.query.query;
