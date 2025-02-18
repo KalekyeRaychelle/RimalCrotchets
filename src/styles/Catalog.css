@@ -82,4 +82,23 @@
         color: black;
     }
 }
+@media(max-width:768px){
+    .CatalogArea h2{
+        font-size: 27px;
+        
+    }
+    .catalog{
+        align-items: center;
+    }
+    .product-card{
+        margin-left:3%;
+        display:flex;
+    }
+    .product-card img{
+        width:200px;
+    }
+    .product-card div{
+        margin-left: 2%;
+    }
 
+}
