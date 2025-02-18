@@ -117,10 +117,12 @@ const Sweaters = () => {
               alt={product.productName}
               className="product-image"
             />
-            <p>{product.productName}</p>
-            <p>Price: Ksh.{product.Price}</p>
-            <button onClick={() => addToCart(product)}>ADD TO CART</button>
+             <div>
+              <p>{product.productName}</p>
+              <p>Price: Ksh.{product.Price}</p>
+              <button onClick={() => addToCart(product)}>ADD TO CART</button>
 
+            </div>
           </div>
         ))}
       </div>
