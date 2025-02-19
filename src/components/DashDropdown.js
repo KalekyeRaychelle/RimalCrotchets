@@ -4,7 +4,7 @@ import '../styles/DashDropdown.css'
 const DashDropdown = () => {
   return (
     <div className='dashdropdown'>
-      <Link>Profile</Link>
+      <Link to='/Dashboard/User/'>Profile</Link>
       <Link>Settings</Link>
       <Link>Log Out</Link>
     </div>

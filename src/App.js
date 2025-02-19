@@ -19,6 +19,7 @@ import Sweaters from './pages/Sweaters';
 import Bags from './pages/Bags';
 import Tops from './pages/Tops';
 import Pants from './pages/Pants';
+import Users from './pages/Users';
 function App() {
 
   const location = useLocation();
@@ -43,6 +44,7 @@ function App() {
           <Route path="/Catalog/Tops" element={<Tops/>}/>
           <Route path="/Catalog/Pants" element={<Pants/>}/>
           <Route path="/Catalog/newProduct" element={<CatalogForm/>}/>
+          <Route path="/Dashboard/User/" element={<Users/>}/>
           <Route path="*" element={<NoPage />} />
       </Routes>
       {isDashboard ? <DashboardFooter/>:<Footer/>}
