@@ -17,5 +17,7 @@ const CatalogRouter = require('./routes/Catalog');
 app.use('/api/Catalog', CatalogRouter);
 const CartRouter=require('./routes/ShoppingCart');
 app.use('/api/ShoppingCart',CartRouter)
+const userRouter=require('./routes/User')
+app.use('/api/User',userRouter)
 app.listen(7700)
 
