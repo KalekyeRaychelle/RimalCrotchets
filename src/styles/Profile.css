@@ -8,9 +8,27 @@
     align-items: center;
     padding:1% 1% 2% 1%;
 }
-.Profile h2{
+.top{
+    display:flex;
+
+}
+.top h2{
     letter-spacing: 0.2em;
-    
+    position:relative;
+    left:36%;
+}
+.pen{
+    border: none;
+    background:transparent;
+    font-size:20px;
+    position:relative;
+    left:60%;
+    transition: transform 0.3s ease-in-out;
+}
+.pen:hover{
+    color:white;
+    cursor:pointer;
+    transform:translateY(-5px);
 }
 .user-card{
     background-color: #fdfdfd;

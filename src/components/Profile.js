@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { FaPen } from "react-icons/fa";
 import '../styles/Profile.css'
 
 
@@ -47,7 +48,12 @@ const Profile = () => {
 
   return (
     <div className="Profile">
-      <h2>USER DETAILS</h2>
+      <div className="top">
+        <h2>USER DETAILS</h2>
+        <button className="pen"><FaPen/></button>
+
+      </div>
+      
 
       {message && <div className="message-box">{message}</div>}
 
