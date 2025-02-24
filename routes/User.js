@@ -27,16 +27,23 @@ router.get('/Profile',verifyToken,async(req,res)=>{
 });
 
 
-router.get('/Adresses',async (req,res)=>{
-    var query="SELECT * FROM deliveryaddresses";
-    connection.query(query,function(error,results){
-        if(error){
-            console.error(error)
-            return res.status(500).json({error:"Address retrieval failure"})
-
+router.get('/Address',verifyToken,async (req,res)=>{
+    const email=req.user.email;
+    var query="SELECT * FROM deliveryaddresses WHERE email=?";
+    if (!email) {
+        return res.status(400).json({ error: "Email is required" });
+    }
+    connection.query(query, [email], (error, results) => {
+        if (error) {
+            console.error(error);
+            return res.status(500).json({ error: "Addresses retrieval failed" });
         }
-        res.status(201).json({message:"Address retrieval successful", adresses:results})
 
-    })
+        if (results.length === 0) {
+            return res.status(404).json({ error: "You have no Address Entry yet" });
+        }
+
+        res.status(200).json({ message: "Addresses retrieved successfully", address: results[0] });
+    });
 })
 module.exports=router;
