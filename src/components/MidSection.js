@@ -1,5 +1,5 @@
 import React from 'react'
-import backgrndImg from '../assets/shirtBackground.jpg'
+import backgrndImg from '../assets/yarn.jpg'
 import '../styles/midSection.css'
 import { useNavigate } from 'react-router-dom'
 const MidSection = () => {
