@@ -153,14 +153,13 @@
 .dropdownIcon {
   cursor: pointer;
 }
-
 @media(max-width:768px){
   .header{
     height:70px;
   }
+
   .leftSide{
     margin-right:0.4%;
-
   }
   .leftSide img{
     margin-right:4px;
@@ -168,41 +167,62 @@
   .leftSide h2{
     font-size: 20px;
   }
-  .searchBar{
-    left:5%;
-    top:5%;
+  .searchBar {
+    position: relative; 
   }
-  .searchBar input{
-    display:none;
-
-  }
-  .searchBar .searchIcon {
-    left: 17px;
-    top:10px;
-   
-  }
-  .searchBar .searchIcon:hover{
-    background-color: rgba(255, 255, 255, 0.2);
-    color: white;
-}
   
+  .searchForm {
+    display: none;
+    position: absolute;
+    left:-220px;
+    padding: 2px 4px;
+    border-radius: 5px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    border: 1px solid #F283B6;
+    width: 200px;
+  }
+  .searchBar input {
+    padding: 4px 7px;
+    border-radius: 7px;
+    border: solid 2px #F283B6;
+    transition: all 0.3s ease;
+    outline: none;
+  }
+  .searchForm.show {
+    display: block;
+  }
+  
+  .searchBar .searchIcon {
+    cursor: pointer;
+    position:relative;
+    left:-20px;
+    top:-5px;
+    font-size: 20px;
+    color: black;
+  }
+  
+  .searchBar .searchIcon:hover {
+    color: #F283B6;
+  }
+  
+
   .rightSide{
     left:6%;
   }
+  
   .liLinks li{
     font-size:20px;
     margin-right: 2px;
-   
   }
+
   .dropdownIcon{
     display:inline-block;
     position:relative;
     top:-14px;
   }
+  
   .dropdownIcon:hover{
-      background-color: rgba(255, 255, 255, 0.2);
-      color: white;
+    background-color: rgba(255, 255, 255, 0.2);
+    color: white;
   }
-
-
 }

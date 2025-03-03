@@ -1,6 +1,6 @@
 import React, { useState, useRef, useEffect } from 'react';
 import headerIcon from '../assets/headerIcon.png';
-import { FaShoppingBag, FaSignInAlt, FaSearch, FaListUl} from "react-icons/fa";
+import { FaShoppingBag, FaSignInAlt, FaSearch, FaListUl } from "react-icons/fa";
 import ListHeader from './ListHeader';
 import ShoppingCart from '../pages/ShoppingCart';
 import '../styles/header.css';
@@ -12,10 +12,11 @@ const Header = () => {
   const [searchResults, setSearchResults] = useState([]);
   const [searchInfo, setSearchInfo] = useState({ searchInput: '' });
   const [showResults, setShowResults] = useState(false);
-  const searchRef = useRef(null); 
+  const [showSearch, setShowSearch] = useState(false);
+
+  const searchRef = useRef(null);
 
   const handleChange = (e) => {
-    console.log("Typing: ", e.target.value);
     setSearchInfo({ ...searchInfo, [e.target.name]: e.target.value });
   };
 
@@ -31,9 +32,8 @@ const Header = () => {
 
       const data = await response.json();
       if (response.ok) {
-        console.log("Search results:", data);
         setSearchResults(data);
-        setShowResults(true); 
+        setShowResults(true);
       } else {
         console.error("Error:", data);
       }
@@ -67,25 +67,28 @@ const Header = () => {
           <h2>RIMAL'S CROCHETS</h2>
         </div>
 
+        {/* Search Bar */}
         <div className='searchBar'>
-          <form onSubmit={handleSubmit}>
-            <input
-              type="search"
-              placeholder="SEARCH PIECE"
-              id="searchInfo"
-              name="searchInput"
-              value={searchInfo.searchInput}
-              onChange={handleChange}
-            />
-            <button className='searchButton' type='submit'>
-              <FaSearch />
-            </button>
-          </form>
-        </div>
-
+          {window.innerWidth > 768 || showSearch ? (
+            <form onSubmit={handleSubmit} className={showSearch ? "searchForm show" : "searchForm"}>
+              <input
+                type="search"
+                placeholder="SEARCH PIECE"
+                id="searchInfo"
+                name="searchInput"
+                value={searchInfo.searchInput}
+                onChange={handleChange}
+              />
+              <button className='searchButton' type='submit'>
+                <FaSearch />
+              </button>
+            </form>
+          ) : (
+            <FaSearch className="searchIcon" onClick={() => setShowSearch(true)} />
+          )}
+        </div>      
         {showResults && (
           <div className='searchResults' ref={searchRef}>
-            
             {searchResults.length > 0 && (
               <ul>
                 {searchResults.map((item) => (
@@ -99,6 +102,7 @@ const Header = () => {
           </div>
         )}
 
+    
         <div className='rightSide'>
           <ul className='liLinks'>
             <li>
