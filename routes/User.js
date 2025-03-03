@@ -46,4 +46,27 @@ router.get('/Address',verifyToken,async (req,res)=>{
         res.status(200).json({ message: "Addresses retrieved successfully", address: results[0] });
     });
 })
+router.post('/newAddress', verifyToken, async (req, res) => {
+    const email = req.user.email;
+    const { County, Constituency, Street, Estate, Floor, HouseNo } = req.body;
+
+    if (!email || !County || !Constituency || !Street || !Estate || !Floor || !HouseNo) {
+        return res.status(400).json({ error: "All fields are required" });
+    }
+
+    const query = `
+        INSERT INTO deliveryaddresses (email, County, Constituency, Street, Estate, Floor, HouseNo) 
+        VALUES (?, ?, ?, ?, ?, ?, ?)
+    `;
+
+    connection.query(query, [email, County, Constituency, Street, Estate, Floor, HouseNo], (error, results) => {
+        if (error) {
+            console.error(error);
+            return res.status(500).json({ error: "Failed to add new address" });
+        }
+
+        res.status(201).json({ message: "Address added successfully" });
+    });
+});
+
 module.exports=router;
