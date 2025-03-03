@@ -4,7 +4,7 @@ import { BsInfoCircle } from "react-icons/bs";
 import "../styles/Profile.css";
 
 const Addresses = () => {
-  const [address, setAddress] = useState(null);
+  const [addresses, setAddresses] = useState([]); 
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
   const [message, setMessage] = useState("");
@@ -30,12 +30,12 @@ const Addresses = () => {
         if (data.error) {
           setError(data.error);
         } else {
-          setAddress(data.address);
+          setAddresses(data.addresses); 
         }
         setLoading(false);
       })
       .catch(() => {
-        setError("Failed to fetch user address");
+        setError("Failed to fetch user addresses");
         setLoading(false);
       });
   }, []);
@@ -63,7 +63,7 @@ const Addresses = () => {
 
       if (response.ok) {
         setMessage("Address added successfully!");
-        setAddress(formData);
+        setAddresses((prev) => [...prev, formData]);
       } else {
         setMessage(data.error || "Something went wrong");
       }
@@ -76,28 +76,30 @@ const Addresses = () => {
   return (
     <div className="Profile">
       <div className="top">
-        <h2>USER ADDRESS</h2>
+        <h2>USER ADDRESSES</h2>
         {error && !showForm && (
           <div className="errorBox">
             <BsInfoCircle className="info" />
-            <p>
-              {error}
-             
-            </p>
+            <p>{error}</p>
           </div>
         )}
       </div>
 
       {message && <div className="message-box">{message}</div>}
 
-      {address && !showForm && (
-        <div className="user-card">
-          <p>County: {address.County} </p>
-          <p>Constituency: {address.Constituency} </p>
-          <p>Street: {address.Street} </p>
-          <p>Estate: {address.Estate} </p>
-          <p>Floor: {address.Floor} </p>
-          <p>House Number: {address.HouseNo}</p>
+      {addresses.length > 0 && !showForm && (
+        <div className="user-cards">
+          {addresses.map((addr, index) => (
+            <div key={index} className="user-card">
+              <h4>Address {index + 1}</h4>
+              <p>County: {addr.County}</p>
+              <p>Constituency: {addr.Constituency}</p>
+              <p>Street: {addr.Street}</p>
+              <p>Estate: {addr.Estate}</p>
+              <p>Floor: {addr.floor}</p>
+              <p>House Number: {addr.HouseNo}</p>
+            </div>
+          ))}
         </div>
       )}
 
