@@ -1,6 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Lora&display=swap');
 .dashboardHeader{  
-    background-color: rgb(237, 225, 210);
+    background-color:#F5E6CA;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
     display:flex;
     justify-content: space-around;
 }
@@ -16,7 +17,7 @@
 }
 .LeftIcons a:hover{
     transform:scale(0.9);
-    color:rgb(123, 123, 183);
+    color:#be2579;
 }
 .rightIcon{
     margin-top: 2%;
@@ -26,7 +27,7 @@
 .rightIcon a{
     display: inline-block;
     font-size: larger;
-    color:rgb(2, 2, 142);
+    color:#be2579;
     transition: transform 0.3s ease;
 }
 .rightIcon a:hover{
