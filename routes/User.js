@@ -26,13 +26,14 @@ router.get('/Profile',verifyToken,async(req,res)=>{
     });
 });
 
+router.get('/Address', verifyToken, async (req, res) => {
+    const email = req.user.email;
+    const query = "SELECT * FROM deliveryaddresses WHERE email=?";
 
-router.get('/Address',verifyToken,async (req,res)=>{
-    const email=req.user.email;
-    var query="SELECT * FROM deliveryaddresses WHERE email=?";
     if (!email) {
         return res.status(400).json({ error: "Email is required" });
     }
+
     connection.query(query, [email], (error, results) => {
         if (error) {
             console.error(error);
@@ -43,9 +44,10 @@ router.get('/Address',verifyToken,async (req,res)=>{
             return res.status(404).json({ error: "You have no Address Entry yet" });
         }
 
-        res.status(200).json({ message: "Addresses retrieved successfully", address: results[0] });
+        res.status(200).json({ message: "Addresses retrieved successfully", addresses: results }); 
     });
-})
+});
+
 router.post('/newAddress', verifyToken, async (req, res) => {
     const email = req.user.email;
     const { County, Constituency, Street, Estate, Floor, HouseNo } = req.body;
